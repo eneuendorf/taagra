@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>The Ta'agra Project</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Medula+One&#124;Forum&#124;Open+Sans" rel="stylesheet">
+
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
+	</head>
+
+	<body>
+
+< ?php include 'header.php'; ?>
+
+<main class="content_main">
+
+<div class="content_main">
+
+<form action="dict_web.cgi" method="post">
+	<h1>Ta'agra Dictionary</h1>
+	
+	<h2>Translate from...</h2>
+		<input type="radio" name="language" value="english">English
+	<br><input type="radio" name="language" value="taagra">Ta'agra
+    
+	<h2>What would you like to translate?</h2>
+    <input type="text" name="search_term"><br>
+    
+    <p><button type="submit">Search</button></p>
+
+</form>
+
+
+</div>
+</main>
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+	</body>
+</html>

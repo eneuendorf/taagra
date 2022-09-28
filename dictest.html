@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>The Ta'agra Project</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Medula+One|Forum|Open+Sans" rel="stylesheet">
+
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
+	</head>
+
+	<body>
+
+		<nav class="topnav" id="myTopnav">
+			<div class="nav_links">
+			<a href="index.html" class="home_button"><img src="images/logo_white_left.png"></a>
+			<a href="index.html" class="dropbtn">Home</a>
+			<div class="dropdown active">
+				<button class="dropbtn">Dictionary
+				</button>
+			<div class="dropdown-content">
+			<a href="dictionary.html">Dictionary List</a>
+			<a href="lookup.html">Word Lookup</a>
+			<a href="#">Phrases</a>
+			<a href="#">Change Log</a>
+			</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Script
+				</button>
+			<div class="dropdown-content">
+			<a href="alphabet.html">Alphabet</a>
+			<a href="#">Script &amp; Font</a>
+			<a href="#">Numbers</a>
+			</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Grammar
+				</button>
+			<div class="dropdown-content">
+			<a href="#">Grammar Rules</a>
+			<a href="#">Irregular verbs</a>
+			<a href="#">Pronouns</a>
+			</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Phrases
+				</button>
+			<div class="dropdown-content">
+			<a href="#">Memrise</a>
+			<a href="#">Worksheets</a>
+			<a href="#">Ta'agra for the Unclawed</a>
+			</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Documentation
+				</button>
+			<div class="dropdown-content">
+			<a href="#">Source Docs</a>
+			<a href="#">Legal</a>
+			</div>
+			</div>
+			</div>
+
+			<div class="social_links">
+				<a href="https://discord.gg/CkRksCf"><i class="fab fa-discord"></i></a>
+				<a href="https://www.youtube.com/channel/UCCplcqENJl555fWl6r_Rycg"><i class="fab fa-youtube"></i></a>
+				<a href="https://twitter.com/taagraproject"><i class="fab fa-twitter"></i></a>
+			</div>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</nav>
+
+<main class="content_main">
+	<div class="content">
+
+		<P ALIGN="center"><IMG SRC="graphics/dictionarybig.png"></P>
+		<P>This document is still under construction.  Everything in this document is subject to change.  All changes made will be tracked in the <A HREF="changelog.php">change log</A>.</P>
+		<P><B>Last Dictionary Update: </B>April 17, 2018
+		  <BR><B>Translated Words: </B>2500
+		  <BR><B>Synonyms: </B>3822
+		  <BR><B>Total translatable words: </B>6322
+		</P>
+		<TABLE ID="dictionary" CLASS="tablesorter">
+		  <THEAD>
+			<TR>
+			  <TH ALIGN="left" WIDTH="100">ENGLISH</TH>
+			  <TH ALIGN="left" WIDTH="100">TA'AGRA</TH>
+			  <TH ALIGN="left" WIDTH="75">TYPE</TH>
+			  <TH ALIGN="left" WIDTH="175">SYNONYMS</TH>
+			  <TH ALIGN="left" WIDTH="200">NOTES</TH>
+		    <TR>
+		  </THEAD>
+		  <TBODY>
+
+		<?php
+
+		foreach ($dictionary as $entry) {
+			echo "<tr>"
+				. "<td>{$entry->english}</td>"
+				. "<td>{$entry->taagra}</td>"
+				. "<td>{$entry->type}</td>"
+				. "<td>{$entry->synonyms}</td>"
+				. "<td>{$entry->notes}</td>"
+				. "</tr>";
+		}
+
+		?>
+		  </TBODY>
+		</TABLE>
+
+
+</div>
+</main>
+
+
+
+
+	</body>
+</html>

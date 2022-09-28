@@ -1,0 +1,5 @@
+"english","taagra","pos","syn","notes"
+"a","-","art","-","No"
+"aboard","izreho","adv","-","Literally"
+"about","eja","adv","-","-"
+"absence","valqahna","n","-","-"
