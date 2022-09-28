@@ -1,0 +1,870 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Browser Upgrade Prompt */
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* hides an element, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+/*
+    STRUCTURE
+*/
+body{
+	background: url("../images/moonshadow_crop.jpg") no-repeat bottom;
+	background-attachment: fixed;
+	font-family: sans-serif;
+/*	font-family: 'Encode Sans Condensed', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+	height: 100%
+}
+
+/*
+    TYPOGRAPHY
+*/
+
+/* The Planewalker is from https://www.dafont.com/planewalker.font */
+
+@font-face{
+	font-family: Planewalker;
+	src: url(../fonts/Planewalker.otf);
+}
+
+.planewalker{
+  font-family: Planewalker;
+}
+
+
+/*
+	NAVBAR
+*/
+
+/* From W3 Schools, with some personal edits */
+.topnav {
+  background-color: #1c1c1c;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .home_button{
+	padding: 5px;
+  margin: 0;
+  height: 100%;
+  width: 55px;
+}
+
+
+.active {
+	background-color: gray;
+	color: red;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 9998;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.social_links{
+	color: inherit;
+	padding-right: 20px;
+}
+.social_links i{
+	color: lightgray;
+	font-size: 20px;
+}
+
+.social_links a:hover{
+	color: white;
+	background-color: #1c1c1c;
+}
+
+.social_links i:hover{
+	color: inherit;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 870px) {
+  .topnav{
+    display: block;
+  }
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .social_links{
+    display: none;
+  }
+}
+
+/* There are some errors with the CSS validator here, but I got this code from W3 Schools */
+@media screen and (max-width: 870px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative; width; 100%;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/*
+    IMAGES
+*/
+img {
+    width: 100%;
+    display: block;
+}
+
+.group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+    LINKS
+*/
+
+#to_top_mobile{
+  display: none;
+  background: #1c1c1c;
+  height: 1.5em;
+  position: fixed;
+  bottom: 0;
+  z-index: 9998;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  border: none;
+}
+
+#to_top_desktop{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #c1921b;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.to_top_desktop{
+	display: none;
+	position: fixed;
+}
+
+/*
+    TABLES
+*/
+
+.verb_table td{
+  padding: 10px 5px;
+}
+
+
+
+/*
+    HOME
+*/
+main{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    object-fit: scale-down;
+}
+
+.title_image{
+	display: flex;
+	justify-content: center;
+	padding-top: 40px;
+	/* align-items: center; */
+}
+
+.taagra_title_stacked{
+	object-fit: scale-down;
+}
+.taagra_title_long{
+	object-fit: scale-down;
+	display: none;
+}
+
+.title_text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.calls_to_action{
+	display: flex;
+  width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+}
+
+.calls_to_action a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.calls_to_action a:active{
+    color: gray;
+}
+
+.cta{
+  text-align: center;
+	margin: 10px 30px;
+	padding: 6px;
+	background-color: rgba(0,0,0,.5);
+	border: 3px solid black;
+	color: white;
+	/* width: 300px; */
+  width: 90%;
+	height: 60px;
+	font-size: 30px;
+}
+
+.calls_to_action img{
+    /* margin: 0 auto; */
+    height: 100%;
+    width: auto;
+}
+
+.calls_to_action .hoverable{
+    display: none;
+}
+
+.social_links_lower{
+/* 	flex-wrap: nowrap;*/ 
+	/* display: inline;  */
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.social_links_lower i{
+	color: white;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.social_links_lower i:active{
+  color: gray;
+}
+
+/*
+    FOOTER
+*/
+footer{
+  height: 100px;
+  background-color: black;
+}
+
+
+/*
+    CONTENT PAGES
+*/
+
+.home_content{
+  position: relative;
+  background: url("../images/parchment.jpg") repeat center;
+  padding: 0 50px 20px;
+  bottom: 30px;
+  font-family: Planewalker;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.home_content .arrow a:link,
+.home_content .arrow a:hover,
+.home_content .arrow a:active,
+.home_content .arrow a:visited{
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+.home_content .arrow{
+  text-align: center;
+  color: #1c1c1c;
+  margin: 0 auto;
+  /* color: red; */
+  font-size: 30px;
+}
+
+/* GENERAL CONTENT PAGES */
+
+.content a{
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+.content_main{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.content{
+
+  width: 100%;
+}
+
+.content_title{
+  font-family: "Planewalker";
+  text-align: center;
+  font-size: 40px;
+  line-height: 1em;
+}
+
+.content_subtitle{
+  font-family: "Planewalker";
+  /* padding-left: 30px; */
+  text-align: center;
+  font-size: 30px;
+}
+
+.content .explanation{
+    padding: 20px;
+    line-height: 1.5em;
+    background-color: rgb(255,255,255,.5);
+}
+
+.content{
+	background: url("../images/parchment.jpg") repeat center;
+  width: 100%;
+}
+
+.home_content a{
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+/* DICTIONARY PAGE */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.search_form{
+display: flex;
+align-items: center;
+}
+
+.submit_button {
+background: orange;
+color: white;
+border-style: none;
+border-radius: 0 50% 50% 0;
+height: 50px;
+width: 60px;
+font: bold 15px arial, sans-serif;
+box-shadow: 3px 3px 5px black;
+}
+
+.submit_button:hover{
+background-color: #ffc863;
+}
+
+.search_bar{
+width: 100%;
+display: flex;
+felx-wrap: nowrap;
+padding: 12px 20px;
+margin: 8px 0;
+}
+
+
+.search_tools{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+justify-content: center;
+}
+
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+border-radius: 25px 0 0 25px;
+border-style: none;
+box-shadow: 3px 3px 5px;
+text-align: center;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8B6742;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: orange;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(85px);
+  -ms-transform: translateX(85px);
+  transform: translateX(85px);
+}
+
+.tag
+{
+  display: none;
+}
+
+.tag, .eng
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .tag
+{display: block;}
+
+input:checked + .slider .eng
+{display: none;}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/*DICTIONARY RESULTS*/
+.search_result_block{
+margin: 30px;
+box-shadow: 0 0 30px;
+}
+
+.search_results{
+padding-left: 25px;
+}
+
+.search_results .planewalker{
+font-size: 3em;
+border-bottom: solid #7a3f00 4px;
+margin: 0;
+padding: 5px;
+}
+
+.search_results .part_of_speech{
+font-size: 1.2em;
+font-style: italic;
+}
+
+.search_results table{
+font-size: 1.2em;
+}
+
+.search_results tr td:first-of-type{
+font-weight: bold;
+}
+
+.search_results td{
+padding-left: 7px;
+}
+
+/* GRAMMAR PAGE */
+
+ .page_nav{
+   width: 100%;
+   background-color: #DAA520;
+   display: flex;
+   flex-flow: column nowrap;
+ }
+
+ .page_nav_desktop{
+   z-index: 8888;
+   width: 250px;
+   height: 590px;
+   padding-top: 30px;
+   background-color: #DAA520;
+   display: none;
+ }
+
+ .page_nav_desktop a{
+   width: 100%;
+   margin: 0;
+ }
+
+ .page_nav a:link, .page_nav a:visited{
+  font-family: planewalker;
+  color: black;
+  font-size: 25px;
+  padding: 10px;
+  text-decoration: none;
+ }
+
+ .page_nav a:nth-child(even), .page_nav a:visited{
+   background-color: #c1921b;
+ }
+
+.page_nav a:hover, .page_nav a:active{
+  background-color: gray;
+}
+
+.page_nav_desktop_content{
+  display: flex;
+  flex-flow: column nowrap;
+  line-height: .75em;
+}
+
+/* DICTIONARY CONTENT */
+
+.dictionary img{
+    height: 20px;
+    width: 20px;
+}
+
+/* SCRIPT PAGE */
+
+.script_example{
+  object-fit: scale-down;
+}
+
+/* ALPHABET PAGE */
+
+.letters img{
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+}
+.letters{
+  line-height: .5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.letters td{
+  text-align: center;
+  max-width: 300px;
+  line-height: 1.5em;
+  padding: 20px;
+}
+
+.letters tr{
+  text-align: center;
+}
+
+.large_screen{
+  display: none;
+  background-color: rgb(255,255,255,.3);
+  padding: 20px;
+}
+
+/* VIDEOS */
+.video_embed{
+    width: 100%;
+    /* padding: 5px; */
+}
+
+.video_embed iframe {
+	width: 100%;
+   display: block;
+   object-fit: scale-down;
+   min-height: 20px;
+   /* margin: 50px auto; */
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /* body { background-color: orange; } */
+    .cta{
+        width: 400px;
+        height: 70px;
+        /* margin: 30px 30px; */
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 870px) {
+    /* body { background-color: green; } */
+	.body{
+		background: url("../images/moonshadow_crop.jpg") no-repeat center top fixed;
+	}
+	.taagra_title_stacked{
+		display: none;
+	}
+	.taagra_title_long{
+		display: block;
+	}
+	.title_text{
+		font-size: 2em;
+	}
+    .calls_to_action .hoverable{
+      display: flex;
+    }
+    .calls_to_action .mobile{
+      display: none;
+    }
+/*     .social_links_lower{
+      display: none;
+    } */
+    .split_screen{
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .split_1{
+      max-width: 50%;
+      padding: 30px;
+    }
+    .split_2{
+      display: block;
+      max-width: 50%;
+      margin: auto auto;
+      /* padding: 30px; */
+    }
+    .large_screen{
+      display: block;
+    }
+    .small_screen{
+      display: none;
+    }
+    .video_embed iframe {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+    /* .content{
+      display: flex;
+    } */
+	.to_top_mobile{
+	display: none;
+	position: fixed;
+	}
+	.to_top_desktop{
+	display: block;
+	position: fixed;
+	}
+  .home_content{
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .home_content .arrow{
+    font-size: 40px;
+  }
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* body { background-color: blue; } */
+    .title_text{
+       width: 80%;
+        /* margin: 25% auto; */
+        /* margin-bottom: 50px; */
+    }
+    .calls_to_action{
+        flex-flow: row nowrap;
+        /* margin: auto auto; */
+    }
+    .content_main{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .page_nav{
+      display: none;
+    }
+    .page_nav_desktop{
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 15%;
+      margin-top: -2.5em;
+    }
+    .content{
+      margin: 0 80px;
+    }
+    .grammar_content{
+      margin: 0 300px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* body { background-color: purple; } */
+    .title_text{
+        /* margin: 15% auto; */
+        /* margin-bottom: 50px; */
+    }
+    .topnav a, .topnav .dropdown button{
+      font-size: 20px;
+    }
+}
+
+/* Extra large devices (large desktops, 1800px and up) */
+@media (min-width: 2000px) {
+    /* body { background-color: purple; } */
+    .topnav a, .topnav .dropdown button{
+      font-size: 25px;
+    }
+
+}
